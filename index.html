@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RxJS playground</title>
+    <meta name="description" content="Learn RxJS with TypeScript, plain HTML, and browser events." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">PLAIN HTML + TYPESCRIPT</p>
+        <h1>RxJS playground</h1>
+        <p>Edit <code>sandbox.ts</code>, save, and watch your streams here or in the browser console.</p>
+      </header>
+      <section aria-labelledby="controls-title">
+        <h2 id="controls-title">DOM events</h2>
+        <button id="emit-button" type="button">Emit a click</button>
+        <button id="stop-button" type="button">Stop streams</button>
+        <label for="search-input">Search stream</label>
+        <input id="search-input" type="search" placeholder="Type something…" />
+        <p>Connect these controls to streams in sandbox.ts. The archived DOM lesson shows an example.</p>
+      </section>
+      <section aria-labelledby="output-title">
+        <div class="output-heading">
+          <h2 id="output-title">Stream output</h2>
+          <button id="clear-button" type="button">Clear output</button>
+        </div>
+        <pre id="output" role="log" aria-live="polite"></pre>
+      </section>
+    </main>
+    <script type="module" src="/sandbox.ts"></script>
+  </body>
+</html>
