@@ -1,21 +1,35 @@
-import { Observable } from "rxjs";
+// import { bufferCount, interval, Observer } from "rxjs";
+// import { log, stopButton } from "./browser";
+
 import { log } from "./browser";
 
-// Your working area: this file runs in the browser.
-// DOM helpers are available from ./browser: emitButton, stopButton, searchInput, log.
-// Archive finished exercises in lessons/.
+// // Your working area: this file runs in the browser.
+// // DOM helpers are available from ./browser: emitButton, stopButton, searchInput, log.
+// // Archive finished exercises in lessons/.
 
-const observable = new Observable<number>((observer) => {
-  for (let i = 0; i < 5; i++) {
-    observer.next(i);
-  }
+// class IntervalObserver implements Observer<number[]> {
+//   next(data: number[]) {
+//     log("data", data);
+//   }
+//   error(error: any) {
+//     console.log("error", error);
+//   }
 
-  observer.complete();
-});
+//   complete() {
+//     log("Completed");
+//   }
+// }
 
-observable.subscribe({
-  next: (value) => log("VALUE", value),
-  error: (error) => console.error(error),
-  // Optional: you can add a complete handler t
-  complete: () => log("Completed"),
-});
+// const observable = interval(1000);
+
+// const subscription = observable
+//   .pipe(bufferCount(3, 4))
+//   .subscribe(new IntervalObserver());
+
+// stopButton.addEventListener("click", () => subscription.unsubscribe());
+
+let text = "123456789";
+const pattern = /\d/g;
+
+let result = text.match(pattern);
+log("result", result);
