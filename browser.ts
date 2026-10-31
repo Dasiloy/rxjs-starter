@@ -1,13 +1,17 @@
 // Reusable browser setup. Write your exercises in sandbox.ts.
+
+import { Subscription } from "rxjs";
+
 // Plain DOM elements replace Angular's template bindings and ViewChild.
 export const emitButton =
   document.querySelector<HTMLButtonElement>("#emit-button")!;
-export const stopButton =
-  document.querySelector<HTMLButtonElement>("#stop-button")!;
+const stopButton = document.querySelector<HTMLButtonElement>("#stop-button")!;
 export const searchInput =
   document.querySelector<HTMLInputElement>("#search-input")!;
 const clearButton = document.querySelector<HTMLButtonElement>("#clear-button")!;
 const output = document.querySelector<HTMLPreElement>("#output")!;
+
+export const subscriptions: Subscription[] = [];
 
 // Optional display helper: console.log works normally too.
 export function log(label: string, value?: unknown) {
@@ -24,5 +28,12 @@ export function log(label: string, value?: unknown) {
 }
 
 clearButton.addEventListener("click", () => {
+  stopButton.click();
   output.textContent = "";
+  output.scrollTop = output.scrollHeight;
+});
+
+stopButton.addEventListener("click", () => {
+  subscriptions.forEach((subscription) => subscription.unsubscribe());
+  subscriptions.length = 0;
 });
