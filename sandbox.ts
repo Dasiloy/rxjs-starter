@@ -1,1 +1,0 @@
-/* Ready for the next exercise. Register subscriptions with the shared list in browser.ts. */
