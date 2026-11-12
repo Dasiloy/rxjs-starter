@@ -1,7 +1,1 @@
-import { log } from "./browser";
-
-let text = "W3Schools Tutorials";
-let pattern = /(?<!W3Schools )Tutorials/;
-
-let result = pattern.test(text);
-log("result", result); // true()
+/* Ready for the next exercise. Register subscriptions with the shared list in browser.ts. */
